@@ -11,7 +11,7 @@ code {
     monospace;
 }
 
-html, body {
+html, body-M {
   height: 100%;
   margin: 0;
   background-color: #282c34;
