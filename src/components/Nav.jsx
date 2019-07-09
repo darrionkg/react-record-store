@@ -18,16 +18,6 @@ import {Link} from 'react-router-dom';
 
 const drawerWidth = 240;
 
-const homeMenu = {
-  textDecoration: 'none',
-  color: 'white',
-};
-
-const menuLink = {
-  textDecoration: 'none',
-  color: 'black',
-};
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -101,72 +91,71 @@ export default function PersistentDrawerRight() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
+      position="fixed"
+      className={clsx(classes.appBar, {
+        [classes.appBarShift]: open,
+      })}
       >
-        <Toolbar>
-          <Typography variant="h6" noWrap className={classes.title} style={{textAlign: 'left'}}>
-          <Link to='/' style={homeMenu}>
-            EPICODUS RECORDS
-            </Link>
-          </Typography>
-          <IconButton
-            color="inherit"
-            aria-label="Open drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            className={clsx(open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
+      <Toolbar>
+      <Typography variant="h6" noWrap className={classes.title} style={{textAlign: 'left'}}>
+      <Link to='/' className={'noDecorationWhite'}>
+      EPICODUS RECORDS
+      </Link>
+      </Typography>
+      <IconButton
+      color="inherit"
+      aria-label="Open drawer"
+      edge="end"
+      onClick={handleDrawerOpen}
+      className={clsx(open && classes.hide)}
+      >
+      <MenuIcon />
+      </IconButton>
+      </Toolbar>
       </AppBar>
-
+      <div className={'space'}></div>
       <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
+      className={clsx(classes.content, {
+        [classes.contentShift]: open,
+      })}
       >
       </main>
       <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="right"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
+      className={classes.drawer}
+      variant="persistent"
+      anchor="right"
+      open={open}
+      classes={{
+        paper: classes.drawerPaper,
+      }}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-        <Link to='/' style={menuLink}><ListItem button key={'Home'}>
-          <ListItemText primary={'Home'} />
-        </ListItem>
-        </Link>
-          <Link to='/bands' style={menuLink}><ListItem button key={'Bands'}>
-            <ListItemText primary={'Bands'} />
-          </ListItem>
-          </Link>
-          <Link to='/merchlist' style={menuLink}><ListItem button key={'Shop'}>
-          <ListItemText primary={'Shop'} />
-          </ListItem>
-          </Link>
-        </List>
-        <Divider />
-        <List>
-          {['Admin'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+      <div className={classes.drawerHeader}>
+      <IconButton onClick={handleDrawerClose}>
+      {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+      </IconButton>
+      </div>
+      <Divider />
+      <List>
+      <Link to='/' className={'noDecorationBlack'}><ListItem button key={'Home'}>
+      <ListItemText primary={'Home'} />
+      </ListItem>
+      </Link>
+      <Link to='/bands' className={'noDecorationBlack'}><ListItem button key={'Bands'}>
+      <ListItemText primary={'Bands'} />
+      </ListItem>
+      </Link>
+      <Link to='/merchlist' className={'noDecorationBlack'}><ListItem button key={'Shop'}>
+      <ListItemText primary={'Shop'} />
+      </ListItem>
+      </Link>
+      </List>
+      <Divider />
+      <List>
+      <Link to='/admin' className={'noDecorationBlack'}><ListItem button key={'Admin'}>
+      <ListItemText primary={'Admin'} />
+      </ListItem>
+      </Link>
+      </List>
       </Drawer>
     </div>
   );

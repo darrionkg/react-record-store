@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import Nav from './components/Nav';
 import { Switch, Route } from 'react-router-dom';
 import Welcome from './components/Welcome';
+import Admin from './components/Admin';
 import BandsList from './components/BandsList';
-import NewProductForm from './components/NewProductForm';
 import MerchList from './components/MerchList';
+import AddProduct from './components/AddProduct';
 import './App.css';
 
 function App() {
@@ -15,8 +15,9 @@ function App() {
         <Switch>
           <Route exact path='/' component={Welcome}/>
           <Route exact path='/bands' component={BandsList}/>
-          <Route exact path='/newproduct' component={NewProductForm}/>
-          <Route exact path='/merchlist' component={MerchList}/>
+          <Route exact path='/shop' component={MerchList}/>
+          <Route exact path='/admin' component={Admin}/>
+          <Route exact path='/addproduct' component={AddProduct}/>
         </Switch>
 
     </div>

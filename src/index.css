@@ -16,3 +16,21 @@ html, body-M {
   margin: 0;
   background-color: #282c34;
 }
+
+.space {
+  margin-bottom: 5em;
+}
+
+.noDecorationWhite {
+  text-decoration: none;
+  color: white;
+}
+
+.noDecorationBlack {
+  text-decoration: none;
+  color: black;
+}
+
+.whiteText {
+  color: white;
+}
