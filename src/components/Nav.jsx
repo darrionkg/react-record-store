@@ -13,12 +13,20 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Musvideo from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import {Link} from 'react-router-dom';
 
 const drawerWidth = 240;
+
+const homeMenu = {
+  textDecoration: 'none',
+  color: 'white',
+};
+
+const menuLink = {
+  textDecoration: 'none',
+  color: 'black',
+};
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -100,7 +108,9 @@ export default function PersistentDrawerRight() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title} style={{textAlign: 'left'}}>
+          <Link to='/' style={homeMenu}>
             EPICODUS RECORDS
+            </Link>
           </Typography>
           <IconButton
             color="inherit"
@@ -135,11 +145,10 @@ export default function PersistentDrawerRight() {
         </div>
         <Divider />
         <List>
-          {['Bands', 'Merch', 'About', 'Contact'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <Link to='/bands' style={menuLink}><ListItem button key={'Bands'}>
+            <ListItemText primary={'Bands'} />
+          </ListItem>
+          </Link>
         </List>
         <Divider />
         <List>
