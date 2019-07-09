@@ -123,6 +123,7 @@ export default function PersistentDrawerRight() {
           </IconButton>
         </Toolbar>
       </AppBar>
+      
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
@@ -147,6 +148,10 @@ export default function PersistentDrawerRight() {
         <List>
           <Link to='/bands' style={menuLink}><ListItem button key={'Bands'}>
             <ListItemText primary={'Bands'} />
+          </ListItem>
+          </Link>
+          <Link to='/merchlist' style={menuLink}><ListItem button key={'Shop'}>
+          <ListItemText primary={'Shop'} />
           </ListItem>
           </Link>
         </List>
