@@ -57,6 +57,7 @@ export default function ProductList(props) {
           description={product.description}
           category={product.category}
           price={product.price}
+          image={product.image}
           key={product.id}/>
       )}
       </div>
@@ -66,4 +67,3 @@ export default function ProductList(props) {
 ProductList.propTypes = {
   productList: PropTypes.array
 }
-

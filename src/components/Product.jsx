@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import aliceInChainsDirt from './../assets/merch-images/aliceInChainsDirt.jpg';
 
 function Product(props) {
   return (
@@ -18,6 +19,7 @@ function Product(props) {
         }
       `}</style>
       <div className="color-toggle">
+        <img src={aliceInChainsDirt} alt="" style={{width: '150px', height: '150px'}}/>
         <h3>{props.title} - {props.artist}</h3>
         <h4>{props.description}</h4>
         <p><em>{props.price}</em></p>
@@ -33,7 +35,8 @@ Product.propTypes = {
   artist: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired
 };
 
 export default Product;

@@ -5,9 +5,9 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import nirvana from './../assets/nirvana.jpg';
-import rhcp from './../assets/rhcp.jpg';
-import soad from './../assets/soad.jpeg';
+import nirvana from './../assets/band-images/nirvana.jpg';
+import rhcp from './../assets/band-images/rhcp.jpg';
+import soad from './../assets/band-images/soad.jpeg';
 
 const useStyles = makeStyles(theme => ({
   root: {

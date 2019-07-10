@@ -7,13 +7,14 @@ import BandsList from './components/BandsList';
 import ProductList from './components/ProductList';
 import AddProduct from './components/AddProduct';
 import './App.css';
+import masterList from './sample-products';
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      masterList: []
+      masterList
     };
     this.handleAddingNewProductToList = this.handleAddingNewProductToList.bind(this);
   }
@@ -23,7 +24,7 @@ class App extends React.Component {
     newMasterList.push(newProduct);
     this.setState({masterList: newMasterList});
   }
-  
+
   render(){
     return (
       <div className="App">
@@ -37,7 +38,7 @@ class App extends React.Component {
           </Switch>
       </div>
     );
-  } 
+  }
 }
 
 export default App;
