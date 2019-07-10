@@ -57,12 +57,12 @@ export default function AddProduct(props) {
         title: _title.value,
         artist: _artist.value,
         description: _description.value,
-        category: _category.value,
+        category: _category.value,      
         price: _price.value,
         id: v4(),
       }
     );
-    _title.value = '';
+    _title.value = '';      
     _artist.value = '';
     _description.value = '';
     _category.value = '';
@@ -72,26 +72,27 @@ export default function AddProduct(props) {
   return (
     <div>
     <form onSubmit={handleNewProductFormSubmission} className={classes.container} noValidate autoComplete="off" style={{backgroundColor: "white", margin: "7%", padding: "5%"}}>
-      <TextField
+        <TextField
         id="title"
         label="Title"
         className={classes.textField}
         margin="normal"
-        ref={(textField) => {_title = textField;}}
+        // ref={(input) => {_title = input;}}
+        inputProps={{ref: input => _title = input}}
       />
       <TextField
         id="artist"
         label="Artist"
         className={classes.textField}
         margin="normal"
-        ref={(textField) => {_artist = textField;}}
+        inputProps={{ref: input => _artist = input}}
       />
       <TextField
         id="description"
         label="Description"
         className={classes.textField}
         margin="normal"
-        ref={(textField) => {_description = textField;}}
+        inputProps={{ref: input => _description = input}}
       />
       <TextField
         id="category"
@@ -104,7 +105,7 @@ export default function AddProduct(props) {
             className: classes.menu,
           },
         }}
-        ref={(textField) => {_category = textField;}}
+        inputProps={{ref: input => _category = input}}
         margin="normal"
       >
       {categories.map(option => (
@@ -118,7 +119,7 @@ export default function AddProduct(props) {
         label="Price"
         style={{ margin: 8 }}
         margin="normal"
-        ref={(textField) => {_price = textField;}}
+        inputProps={{ref: input => _price = input}}
       />
       <Button type="submit" className={classes.button} variant="contained" color="primary">Submit</Button> 
     </form>
