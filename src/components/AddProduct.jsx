@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { v4 } from 'uuid';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -76,18 +77,21 @@ export default function AddProduct(props) {
         label="Title"
         className={classes.textField}
         margin="normal"
+        ref={(input) => {_title = input;}}
       />
       <TextField
         id="artist"
         label="Artist"
         className={classes.textField}
         margin="normal"
+        ref={(input) => {_artist = input;}}
       />
       <TextField
         id="description"
         label="Description"
         className={classes.textField}
         margin="normal"
+        ref={(input) => {_description = input;}}
       />
       <TextField
         id="category"
@@ -100,6 +104,7 @@ export default function AddProduct(props) {
             className: classes.menu,
           },
         }}
+        ref={(input) => {_category = input;}}
         margin="normal"
       >
       {categories.map(option => (
@@ -113,9 +118,14 @@ export default function AddProduct(props) {
         label="Price"
         style={{ margin: 8 }}
         margin="normal"
+        ref={(input) => {_price = input;}}
       />
       <Button className={classes.button} variant="contained" color="primary">Submit</Button> 
     </form>
   </div>
   );
+}
+
+AddProduct.propTypes = {
+  onNewProductCreation: PropTypes.func
 }
