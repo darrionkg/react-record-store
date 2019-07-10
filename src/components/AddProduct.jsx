@@ -1,13 +1,17 @@
 import React from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import { v4 } from 'uuid';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+  },
+  button: {
+    margin: theme.spacing(1),
+    height: 36
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -22,109 +26,96 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const currencies = [
+const categories = [
   {
-    value: 'USD',
-    label: '$',
+    value: 'accessories',
+    label: 'Accessories',
   },
   {
-    value: 'EUR',
-    label: '€',
+    value: 'clothing',
+    label: 'Clothing',
   },
   {
-    value: 'BTC',
-    label: '฿',
-  },
-  {
-    value: 'JPY',
-    label: '¥',
+    value: 'music',
+    label: 'Music',
   },
 ];
 
-export default function AddProduct() {
+export default function AddProduct(props) {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
-  });
+  let _title = null;
+  let _artist = null;
+  let _description = null;
+  let _category = null;
+  let _price = null;
 
-  const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value });
-  };
+  function handleNewProductFormSubmission(event) {
+    event.preventDefault();
+    props.onNewProductCreation(
+      {
+        title: _title.value,
+        artist: _artist.value,
+        description: _description.value,
+        category: _category.value,
+        price: _price.value,
+        id: v4(),
+      }
+    );
+    _title.value = '';
+    _artist.value = '';
+    _description.value = '';
+    _category.value = '';
+    _price.value = '';
+  }
 
   return (
-    <form className={classes.container} noValidate autoComplete="off" style={{backgroundColor: "white", margin: "7%", padding: "5%"}}>
+    <div>
+    <form onSubmit={handleNewProductFormSubmission} className={classes.container} noValidate autoComplete="off" style={{backgroundColor: "white", margin: "7%", padding: "5%"}}>
       <TextField
-        id="standard-name"
-        label="Product Title"
+        id="title"
+        label="Title"
         className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
         margin="normal"
       />
-
       <TextField
-        id="standard-name"
+        id="artist"
         label="Artist"
         className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
         margin="normal"
       />
       <TextField
-        id="standard-read-only-input"
-        label="Product Description"
+        id="description"
+        label="Description"
         className={classes.textField}
         margin="normal"
-        InputProps={{
-          readOnly: true,
-        }}
       />
-
       <TextField
-        id="standard-select-currency-native"
+        id="category"
         select
-        label="Product Category"
+        label="Category"
         className={classes.textField}
-        value={values.currency}
-        onChange={handleChange('currency')}
         SelectProps={{
           native: true,
           MenuProps: {
             className: classes.menu,
           },
         }}
-        helperText="Please select your currency"
         margin="normal"
       >
-        {currencies.map(option => (
+      {categories.map(option => (
           <option key={option.value} value={option.value}>
             {option.label}
           </option>
         ))}
       </TextField>
-
       <TextField
-        id="standard-name"
+        id="price"
         label="Price"
-        className={classes.textField}
-        value={values.name}
-        onChange={handleChange('name')}
-        margin="normal"
-      />
-
-
-      <TextField
-        id="standard-full-width"
-        label="Category"
         style={{ margin: 8 }}
-        helperText="Full width!"
         margin="normal"
-        InputLabelProps={{
-          shrink: true,
-        }}
       />
+      <Button className={classes.button} variant="contained" color="primary">Submit</Button> 
     </form>
+  </div>
   );
 }
