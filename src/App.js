@@ -13,16 +13,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterProductList: []
+      masterList: []
     };
     this.handleAddingNewProductToList = this.handleAddingNewProductToList.bind(this);
   }
 
   handleAddingNewProductToList(newProduct){
-    var newMasterProductList = this.state.masterProductList.slice();
-    newMasterProductList.push(newProduct);
-    this.setState({masterProductList: newMasterProductList});
-    console.log(newMasterProductList);
+    var newMasterList = this.state.masterList.slice();
+    newMasterList.push(newProduct);
+    this.setState({masterList: newMasterList});
   }
   
   render(){

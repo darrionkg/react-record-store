@@ -144,7 +144,7 @@ export default function PersistentDrawerRight() {
       <ListItemText primary={'Bands'} />
       </ListItem>
       </Link>
-      <Link to='/productlist' className={'noDecorationBlack'}><ListItem button key={'Shop'}>
+      <Link to='/shop' className={'noDecorationBlack'}><ListItem button key={'Shop'}>
       <ListItemText primary={'Shop'} />
       </ListItem>
       </Link>

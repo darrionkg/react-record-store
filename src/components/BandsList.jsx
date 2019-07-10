@@ -39,30 +39,30 @@ const tileData = [
     img: soad,
     title: 'System of A Down',
   },
-  {
-    img: nirvana,
-    title: 'Nirvana',
-  },
-  {
-    img: rhcp,
-    title: 'Red Hot Chili Peppers',
-  },
-  {
-    img: soad,
-    title: 'System of A Down',
-  },
-  {
-    img: nirvana,
-    title: 'Nirvana',
-  },
-  {
-    img: rhcp,
-    title: 'Red Hot Chili Peppers',
-  },
-  {
-    img: soad,
-    title: 'System of A Down',
-  }
+  // {
+  //   img: nirvana,
+  //   title: 'Nirvana2',
+  // },
+  // {
+  //   img: rhcp,
+  //   title: 'Red Hot Chili Peppers2',
+  // },
+  // {
+  //   img: soad,
+  //   title: 'System of A Down2',
+  // },
+  // {
+  //   img: nirvana,
+  //   title: 'Nirvana3',
+  // },
+  // {
+  //   img: rhcp,
+  //   title: 'Red Hot Chili Peppers3',
+  // },
+  // {
+  //   img: soad,
+  //   title: 'System of A Down3',
+  // }
 ]
 
 

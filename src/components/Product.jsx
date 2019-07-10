@@ -6,10 +6,12 @@ function Product(props) {
     <div>
       <style jsx>{`
         .color-toggle {
-          background-color: grey;
+          background-color: white;
           padding-left: 10%;
           padding-right: 10%;
           padding-top: 1%;
+          margin: 5%;
+          color: black;
         }
         .color-toggle:hover {
           background-color: lightgrey;
