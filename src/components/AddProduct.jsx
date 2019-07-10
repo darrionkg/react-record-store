@@ -77,21 +77,21 @@ export default function AddProduct(props) {
         label="Title"
         className={classes.textField}
         margin="normal"
-        ref={(input) => {_title = input;}}
+        ref={(textField) => {_title = textField;}}
       />
       <TextField
         id="artist"
         label="Artist"
         className={classes.textField}
         margin="normal"
-        ref={(input) => {_artist = input;}}
+        ref={(textField) => {_artist = textField;}}
       />
       <TextField
         id="description"
         label="Description"
         className={classes.textField}
         margin="normal"
-        ref={(input) => {_description = input;}}
+        ref={(textField) => {_description = textField;}}
       />
       <TextField
         id="category"
@@ -104,7 +104,7 @@ export default function AddProduct(props) {
             className: classes.menu,
           },
         }}
-        ref={(input) => {_category = input;}}
+        ref={(textField) => {_category = textField;}}
         margin="normal"
       >
       {categories.map(option => (
@@ -118,9 +118,9 @@ export default function AddProduct(props) {
         label="Price"
         style={{ margin: 8 }}
         margin="normal"
-        ref={(input) => {_price = input;}}
+        ref={(textField) => {_price = textField;}}
       />
-      <Button className={classes.button} variant="contained" color="primary">Submit</Button> 
+      <Button type="submit" className={classes.button} variant="contained" color="primary">Submit</Button> 
     </form>
   </div>
   );
@@ -128,4 +128,4 @@ export default function AddProduct(props) {
 
 AddProduct.propTypes = {
   onNewProductCreation: PropTypes.func
-}
+};
