@@ -9,11 +9,21 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-function Product(props) {
+const useStyles = makeStyles({
+  card: {
+    maxWidth: 400,
+  },
+  media: {
+    height: 400,
+  },
+});
+
+export default function Product(props) {
+  const classes = useStyles();
 
   return (
     <div>
-      <style jsx>{`
+    <style jsx>{`
         .color-toggle {
           background-color: white;
           padding-left: 10%;
@@ -27,11 +37,35 @@ function Product(props) {
         }
       `}</style>
       <div className="color-toggle">
-        <img src={props.image} alt="" style={{width: '150px', height: '150px'}}/>
-        <h3>{props.title} - {props.artist}</h3>
-        <h4>{props.description}</h4>
-        <p><em>{props.price}</em></p>
-        <br/>
+        <Card className={classes.card}>
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image={props.image}
+              title={props.artist}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                <em>{props.title}</em> by {props.artist}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {props.description}
+              </Typography>
+              <br/>
+              <Typography variant="body2" color="textSecondary" component="p">
+                ${props.price}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary">
+              More Info
+            </Button>
+            <Button size="small" color="primary">
+              Add to Cart
+            </Button>
+          </CardActions>
+        </Card>
       </div>
       <hr/>
     </div>
@@ -47,4 +81,13 @@ Product.propTypes = {
   image: PropTypes.string.isRequired,
 };
 
-export default Product;
+// <div>
+//   <div className="color-toggle">
+//     <img src={props.image} alt="" style={{width: '150px', height: '150px'}}/>
+//     <h3>{props.title} - {props.artist}</h3>
+//     <h4>{props.description}</h4>
+//     <p><em>{props.price}</em></p>
+//     <br/>
+//   </div>
+//   <hr/>
+// </div>
