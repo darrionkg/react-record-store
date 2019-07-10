@@ -1,3 +1,15 @@
+import aliceInChainsDirt from './assets/merch-images/aliceInChainsDirt.jpg';
+import aliceInChainsShirt from './assets/merch-images/aliceInChainsShirt.jpg';
+import nirvanaBleach from './assets/merch-images/nirvanaBleach.jpg';
+import nirvanaInUtero from './assets/merch-images/nirvanaInUtero.jpg';
+import nirvanaPendant from './assets/merch-images/nirvanaPendant.jpg';
+import nirvanaSmileyShirt from './assets/merch-images/nirvanaSmileyShirt.jpeg';
+import redHotChiliPeppersBloodSugarSexMagik from './assets/merch-images/redHotChiliPeppersBloodSugarSexMagik.jpg';
+import redHotChiliPeppersCalifornication from './assets/merch-images/redHotChiliPeppersCalifornication.jpeg';
+import redHotChiliPeppersCoaster from './assets/merch-images/redHotChiliPeppersCoaster.jpg';
+import redHotChiliPeppersShirt from './assets/merch-images/redHotChiliPeppersShirt.jpg';
+import systemOfADownHandShirt from './assets/merch-images/systemOfADownHandShirt.jpg';
+import systemOfADownToxicity from './assets/merch-images/systemOfADownToxicity.jpg';
 
 const masterList = [
   {
@@ -7,7 +19,7 @@ const masterList = [
     "category": "Music",
     "price": 9.99,
     "id": "1",
-    "image": "redHotChiliPeppersCalifornication.jpeg"
+    "image": redHotChiliPeppersCalifornication,
   },
   {
     "title": "Blood Sugar Sex Magik",
@@ -16,7 +28,7 @@ const masterList = [
     "category": "Music",
     "price": 7.99,
     "id": "2",
-    "image": "redHotChiliPeppersBloodSugarSexMagik.jpg"
+    "image": redHotChiliPeppersBloodSugarSexMagik
   },
   {
     "title": "Bleach",
@@ -25,7 +37,7 @@ const masterList = [
     "category": "Music",
     "price": 7.99,
     "id": "3",
-    "image": "nirvanaBleach.jpg"
+    "image": nirvanaBleach
   },
   {
     "title": "In Utero",
@@ -34,7 +46,7 @@ const masterList = [
     "category": "Music",
     "price": 9.99,
     "id": "4",
-    "image": "nirvanaInUtero.jpg"
+    "image": nirvanaInUtero
   },
   {
     "title": "Toxicity",
@@ -43,16 +55,16 @@ const masterList = [
     "category": "Music",
     "price": 7.99,
     "id": "5",
-    "image": "systemOfADownToxicity.jpg"
+    "image": systemOfADownToxicity
   },
   {
     "title": "Dirt",
     "artist": "Alice In Chains",
-    "description": "Dirt is the second studio album by the American rock band Alice in Chains, released on September 29, 1992, through Columbia Records. Peaking at No. 6 on the Billboard 200 chart, the album was also well received by music critics. It has since been certified four-times platinum by the RIAA and gone on to sell five million copies worldwide, making Dirt the band's highest selling album to date.[8] It is the band's last album recorded with all four original members, as bassist Mike Starr was fired from the band in January 1993.",
+    "description": "Dirt is the second studio album by the American rock band Alice in Chains, released on September 29, 1992, through Columbia Records. Peaking at No. 6 on the Billboard 200 chart, the album was also well received by music critics. It has since been certified four-times platinum by the RIAA and gone on to sell five million copies worldwide, making Dirt the band's highest selling album to date. It is the band's last album recorded with all four original members, as bassist Mike Starr was fired from the band in January 1993.",
     "category": "Music",
     "price": 7.99,
     "id": "6",
-    "image": "aliceInChainsDirt.jpg"
+    "image": aliceInChainsDirt
   },
   {
     "title": "Tie-Dye Logo",
@@ -61,7 +73,7 @@ const masterList = [
     "category": "Clothing",
     "price": 15.99,
     "id": "7",
-    "image": "redHotChiliPeppersShirt.jpg"
+    "image": redHotChiliPeppersShirt
   },
   {
     "title": "Smiley",
@@ -70,7 +82,7 @@ const masterList = [
     "category": "Clothing",
     "price": 16.99,
     "id": "8",
-    "image": "nirvanaSmileyShirt.jpeg"
+    "image": nirvanaSmileyShirt
   },
   {
     "title": "Hand",
@@ -79,7 +91,7 @@ const masterList = [
     "category": "Clothing",
     "price": 15.99,
     "id": "9",
-    "image": "systemOfADownHandShirt.jpg"
+    "image": systemOfADownHandShirt
   },
   {
     "title": "Jar Of Flies",
@@ -88,7 +100,7 @@ const masterList = [
     "category": "Clothing",
     "price": 15.99,
     "id": "10",
-    "image": "aliceInChainsShirt.jpg"
+    "image": aliceInChainsShirt
   },
   {
     "title": "Smiley Pendant",
@@ -97,7 +109,7 @@ const masterList = [
     "category": "Accessories",
     "price": 15.99,
     "id": "11",
-    "image": "nirvanaPendant.jpg"
+    "image": nirvanaPendant
   },
   {
     "title": "Cup Coaster",
@@ -106,7 +118,7 @@ const masterList = [
     "category": "Accessories",
     "price": 15.99,
     "id": "12",
-    "image": "redHotChiliPeppersCoaster.jpg"
+    "image": redHotChiliPeppersCoaster
   }
 ]
 
