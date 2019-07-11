@@ -40,7 +40,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function ProductDetail(props) {
-  const { handle } = this.props.match.params;
   const classes = useStyles();
 
   return (
@@ -93,7 +92,7 @@ export default function ProductDetail(props) {
 }
 
 ProductDetail.propTypes = {
-    productList: PropTypes.array.isRequired
+    productList: PropTypes.array.isRequired,
 //   title: PropTypes.string.isRequired,
 //   artist: PropTypes.string.isRequired,
 //   description: PropTypes.string.isRequired,
