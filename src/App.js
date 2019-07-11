@@ -8,6 +8,7 @@ import ProductList from './components/ProductList';
 import AddProduct from './components/AddProduct';
 import './App.css';
 import masterList from './sample-products';
+import ProductDetail from './components/ProductDetail';
 
 class App extends React.Component {
 
@@ -33,6 +34,7 @@ class App extends React.Component {
             <Route exact path='/' component={Welcome}/>
             <Route exact path='/bands' component={BandsList}/>
             <Route exact path='/shop' render={()=><ProductList productList={this.state.masterList} />} />
+            <Route exact path='/shop/product/:id' render={()=><ProductDetail productList={this.state.masterList} />} />
             <Route exact path='/admin' component={Admin}/>
             <Route exact path='/addproduct' render={() => <AddProduct onNewProductCreation={this.handleAddingNewProductToList} />}/>
           </Switch>

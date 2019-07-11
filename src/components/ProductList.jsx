@@ -23,10 +23,11 @@ export default function ProductList(props) {
         {props.productList.map((product) =>
         <Product title={product.title}
           artist={product.artist}
-          // description={product.description}
+          description={product.description}
           category={product.category}
           price={product.price}
           image={product.image}
+          id={parseInt(product.id)}
           key={product.id}/>
       )}
       </div>

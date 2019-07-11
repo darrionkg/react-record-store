@@ -39,7 +39,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Product(props) {
+export default function ProductDetail(props) {
+  const { handle } = this.props.match.params;
   const classes = useStyles();
 
   return (
@@ -63,29 +64,25 @@ export default function Product(props) {
           <CardActionArea>
             <CardMedia
               className={classes.media}
-              image={props.image}
-              title={props.artist}
-            />
+              image={props.productList[1].image}
+              title={props.productList[1].artist}
+              />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                <em>{props.title}</em> by {props.artist}
+                <em>{props.productList[1].title}</em> by {props.productList[1].artist}
               </Typography>
-              {/* <Typography variant="body2" color="textSecondary" component="p">
-                {props.description}
-              </Typography> */}
+              <Typography variant="body2" color="textSecondary" component="p">
+                {props.productList[1].description}
+              </Typography>
               <br/>
               <Typography variant="body2" color="textSecondary" component="p">
-                ${props.price}
+                ${props.productList[1].price} - {props.productList[1].category}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Link to={`/shop/product/${props.id}`}><Button size="small" color="primary">
-              More Info
-            </Button>
-            </Link>
             <Button size="small" color="primary">
-              Add to Cart {props.id}
+              {props.id}
             </Button>
           </CardActions>
         </Card>
@@ -95,12 +92,13 @@ export default function Product(props) {
   );
 }
 
-Product.propTypes = {
-  title: PropTypes.string.isRequired,
-  artist: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+ProductDetail.propTypes = {
+    productList: PropTypes.array.isRequired
+//   title: PropTypes.string.isRequired,
+//   artist: PropTypes.string.isRequired,
+//   description: PropTypes.string.isRequired,
+//   category: PropTypes.string.isRequired,
+//   price: PropTypes.number.isRequired,
+//   image: PropTypes.string.isRequired,
+//   id: PropTypes.number.isRequired,
 };
