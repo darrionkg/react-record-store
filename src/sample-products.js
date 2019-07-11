@@ -23,7 +23,7 @@ const masterList = [
   },
   {
     "title": "Blood Sugar Sex Magik",
-    "artist": "Red Hot Chili Peppers",
+    "artist": "Red Hot Chili P",
     "description": "Blood Sugar Sex Magik is the fifth studio album by American rock band Red Hot Chili Peppers, released on September 24, 1991 by Warner Bros. Records. Produced by Rick Rubin, its musical style differed notably from the techniques employed on the band's previous album Mother's Milk (1989), and featured minimal use of heavy metal guitar riffs. The album's subject matter incorporates sexual innuendos and references to drugs and death, as well as themes of lust and exuberance.",
     "category": "Music",
     "price": 7.99,

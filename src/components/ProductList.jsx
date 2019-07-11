@@ -4,22 +4,26 @@ import PropTypes from 'prop-types';
 import Product from './Product';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
+  // root: {
+  //   flexGrow: 1,
+  // },
+  shopContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row"
+  }
 }));
 
-// const classes = useStyles();
 
 export default function ProductList(props) {
-
+  const classes = useStyles();
+  
     return (
-      <div>
+      <div className={classes.shopContainer}>
         {props.productList.map((product) =>
-
         <Product title={product.title}
           artist={product.artist}
-          description={product.description}
+          // description={product.description}
           category={product.category}
           price={product.price}
           image={product.image}

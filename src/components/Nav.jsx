@@ -72,6 +72,7 @@ const useStyles = makeStyles(theme => ({
     }),
     marginRight: 0,
   },
+
 }));
 
 export default function PersistentDrawerRight() {

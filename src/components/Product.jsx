@@ -9,34 +9,55 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 400,
+    // maxWidth: 400,
   },
   media: {
     height: 400,
   },
-});
+  productCard: {
+    width: '25%',
+    minWidth: '550px',
+    minHeight: '400px',
+    [theme.breakpoints.down('lg')]: {
+      width: '33%',
+      minWidth: '550px',
+      minHeight: '400px'
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '50%',
+      minWidth: '550px',
+      minHeight: '400px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      minWidth: '550px',
+      minHeight: '400px'
+    },
+  },
+}));
 
 export default function Product(props) {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.productCard}>
     <style jsx>{`
         .color-toggle {
+          // width: 100%;
           background-color: white;
-          padding-left: 10%;
-          padding-right: 10%;
-          padding-top: 1%;
+          // padding-left: 10%;
+          // padding-right: 10%;
+          // padding-top: 1%;
           margin: 5%;
           color: black;
         }
         .color-toggle:hover {
           background-color: lightgrey;
         }
-      `}</style>
-      <div className="color-toggle">
+      `}</style><div className="color-toggle">
+      
         <Card className={classes.card}>
           <CardActionArea>
             <CardMedia
@@ -80,14 +101,3 @@ Product.propTypes = {
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
 };
-
-// <div>
-//   <div className="color-toggle">
-//     <img src={props.image} alt="" style={{width: '150px', height: '150px'}}/>
-//     <h3>{props.title} - {props.artist}</h3>
-//     <h4>{props.description}</h4>
-//     <p><em>{props.price}</em></p>
-//     <br/>
-//   </div>
-//   <hr/>
-// </div>
